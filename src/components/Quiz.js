@@ -4,7 +4,11 @@ import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
 import ActionGrade from 'material-ui/lib/svg-icons/action/grade';
 
+const method = options => {
+    alert(options);
+};
 const Quiz = ({ quiz, next }) => {
+
 
     if (!Object.keys(quiz).length) {
         return <div>loading...</div>
@@ -24,7 +28,7 @@ const Quiz = ({ quiz, next }) => {
                     //</label>
                 )}
             </List>
-            <RaisedButton label="Next" primary={true} onClick=alert()/>
+            <RaisedButton label="Next" primary={true} onClick={console.log(this)}/>
         </div>
     )
 };
