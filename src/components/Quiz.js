@@ -1,4 +1,8 @@
 import React, { PropTypes } from 'react'
+import RaisedButton from 'material-ui/lib/raised-button';
+import List from 'material-ui/lib/lists/list';
+import ListItem from 'material-ui/lib/lists/list-item';
+import ActionGrade from 'material-ui/lib/svg-icons/action/grade';
 
 const Quiz = ({ quiz, next }) => {
 
@@ -11,16 +15,16 @@ const Quiz = ({ quiz, next }) => {
         <div>
             <h2>{quiz.word}</h2>
 
-            <ul>
+            <List>
                 {(quiz.options || []).map(option =>
-                    <li>
-                        <label>
-                            <input type="radio" name="options" onClick={() => next(option)} key={option}
-                                   value="{option}"/>{option}
-                        </label>
-                    </li>
+                        <ListItem primaryText={option} leftIcon={<ActionGrade />}/>
+                    //<label>
+                    //    <input type="radio" name="options" onClick={() => next(option)} key={option}
+                    //           value="{option}"/>{option}
+                    //</label>
                 )}
-            </ul>
+            </List>
+            <RaisedButton label="Next" primary={true} onClick=alert()/>
         </div>
     )
 };
